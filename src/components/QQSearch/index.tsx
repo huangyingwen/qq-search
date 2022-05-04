@@ -40,22 +40,20 @@ export default function QQSearch() {
       <div>
         <div className={styles.account}>
           <label htmlFor="qq">QQ</label>
-          <input name="qq" onInput={handleAcountInput} />
+          <input name="qq" onInput={handleAcountInput} placeholder="请输入 QQ 号" />
           {loading && <LoadingIcon className={styles.loading} />}
         </div>
         {validateMsg && <div className={styles.error}>{validateMsg}</div>}
         {error && <div className={styles.error}>{error}</div>}
         {data && (
           <div className={styles.qqInfo}>
-            {' '}
             <div className={styles.avatar}>
-              {' '}
-              <img alt="qq 头像" src={data?.qlogo} />{' '}
-            </div>{' '}
+              <img alt="qq 头像" src={data?.qlogo} />
+            </div>
             <div className={styles.info}>
-              {' '}
-              <div>{data?.name}</div> <div>{account}</div>{' '}
-            </div>{' '}
+              <div>{data?.name}</div>
+              <div>{account}</div>
+            </div>
           </div>
         )}
       </div>
